@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+    <title>Add Story</title>
+
+    <!-- Stylesheets -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/screen.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print" />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" /> -->
+
+    <!--[if lt IE 8]>
+        <link rel="stylesheet" href="assets/css/ie.css" media="screen, projection" />
+        <link rel="Shortcut Icon" href="assets/img/favicon.ico" />
+    <![endif]-->
+
+    <!-- Javascripts -->
+    <!-- <script type="text/javascript" src="assets/js/system.js"></script> -->
+
+</head>
+<body>
+<div id="document">
+
+    <div id="header"></div>
+
+    <div id="content">
+        <form method="post" action=".">
+            {{form.as_p}}
+            <input type="submit" name="submit" value="Continue" />
+        </form>
+    </div>
+
+    <div id="footer"></div>
+
+</div>
+</body>
+</html>
