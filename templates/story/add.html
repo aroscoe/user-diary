@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Add Story{% endblock %}
+ 
+{% block content %}
+    <form method="post" action="." enctype="multipart/form-data">
+        {{form.as_p}}
+        <input type="file" name="image" />
+        <br />
+        <br />
+        <input type="submit" name="submit" value="Continue" />
+    </form>
+{% endblock %}

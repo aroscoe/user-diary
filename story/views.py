@@ -29,7 +29,7 @@ def add_story(request):
       return render_to_response('success.html')
   else:
     form = StoryForm()
-  return direct_to_template(request, 'form.html', locals())
+  return direct_to_template(request, 'story/add.html', locals())
 
 def _handle_uploaded_file(file):
   file_path = settings.UPLOADS_DIR + file.name
