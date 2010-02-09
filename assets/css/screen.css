@@ -1,0 +1,50 @@
+html, body {
+  font-family: Verdana,sans-serif;
+}
+a {
+  color: #0072bc;
+}
+
+/* Header
+---------------------------------------------------------- */
+#header {
+  height: 60px;
+  background-color: #0072bc;
+  border-bottom: 12px solid #add2e9;
+}
+#header h1 {
+  margin-left: 10px;
+  padding-top: 16px;
+  font-size: 24px;
+  font-family: Georgia,Times,serif;
+  font-weight: normal;
+  color: #fff;
+  width: 200px;
+}
+#header p {
+  float: right;
+  margin: -18px 10px 0 0;
+  font-size: 14px;
+  color: #004c7e;
+}
+#header p em {
+  color: #add2e9;
+}
+#header a {
+  color: #f7be31;
+}
+
+/* Content
+---------------------------------------------------------- */
+#content {
+  padding: 10px;
+}
+
+/* Forms
+---------------------------------------------------------- */
+label {
+  display: block;
+}
+form p {
+  margin-bottom: 10px;
+}
