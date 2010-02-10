@@ -7,7 +7,7 @@ import os.path
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^story/', include('user_diary.story.urls')),
+    (r'^story/', include('user-diary.story.urls')),
     (r'^admin/', include(admin.site.urls)),
 )
 

@@ -6,8 +6,6 @@ from story.forms import StoryForm
 from story.models import Story as StoryModel
 from story.models import StoryImage as StoryImageModel
 
-from story import my_debug
-
 @login_required
 def add_story(request):
   if request.method == 'POST':
