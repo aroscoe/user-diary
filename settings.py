@@ -1,4 +1,4 @@
-# Django settings for user_diary project.
+# Django settings for user-diary project.
 
 import os.path
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
@@ -68,7 +68,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'user_diary.urls'
+ROOT_URLCONF = 'user-diary.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -88,7 +88,7 @@ INSTALLED_APPS = (
     'story',
 )
 
-UPLOADS_DIR = '/Users/aroscoe/Sites/user_diary/uploads/'
+UPLOADS_DIR = '/Users/aroscoe/Sites/user-diary/uploads/'
 
 # Local Settings
 # Check for local_settings to override production enviroment
