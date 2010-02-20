@@ -48,3 +48,6 @@ label {
 form p {
   margin-bottom: 10px;
 }
+ul.errorlist {
+  color: red;
+}
