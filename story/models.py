@@ -18,16 +18,8 @@ class StoryImage(models.Model):
   class Admin:
     pass
 
-class TestStory(models.Model):
-  name = models.CharField(max_length=150)
-  images = models.ManyToManyField('TestImage')
-  
-  class Admin:
-    pass
-
 class TestImage(models.Model):
   image = models.FileField(upload_to='test')
   
   class Admin:
     pass
-    

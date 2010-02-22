@@ -1,17 +1,13 @@
 from django.forms import ModelForm
-from story.models import Story, TestImage, TestStory
-from story.multi_file_field import MultiFileField, MultiFileInput
+from story.models import Story, TestImage
+from story.multi_file_field import MultiFileField
 
 class StoryForm(ModelForm):
-    class Meta:
-        model = Story
-        exclude = ('images','user',)
-
-class TestStoryForm(ModelForm):
-  images = MultiFileField()
+  images = MultiFileField(required=False)
   
   class Meta:
-    model = TestStory
+    model = Story
+    exclude = ('user',)
 
 class TestImageForm(ModelForm):
   class Meta:
