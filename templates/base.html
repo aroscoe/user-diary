@@ -24,7 +24,7 @@
     <div id="header">
         <h1>User Diary</h1>
         {% if user.is_authenticated %}
-        <p>Logged in as <em>{{user.username}}</em> | <a href="">Logout</a></p>
+        <p>Logged in as <em>{{user.username}}</em> | <a href="{% url logout %}">Logout</a></p>
         {% endif %}
     </div>
 

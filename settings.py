@@ -88,6 +88,9 @@ INSTALLED_APPS = (
     'story',
 )
 
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'
+
 UPLOADS_DIR = 'uploads'
 
 # Local Settings
