@@ -1,3 +1,10 @@
+"""
+A django forms widget and field to allow multiple file uploads.
+
+Created by Edward Dale (www.scompt.com) and updated by Anthony Roscoe (www.anthonyroscoe.com)
+Released into the Public Domain
+"""
+
 from django.utils.datastructures import MultiValueDict
 from django.utils.translation import ugettext
 from django.forms.fields import Field, EMPTY_VALUES
