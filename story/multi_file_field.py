@@ -9,6 +9,7 @@ class MultiFileInput(FileInput):
     A widget to be used by the MultiFileField to allow the user to upload
     multiple files at one time.
     """
+    
     def __init__(self, attrs=None):
         """
         Create a MultiFileInput.
@@ -16,6 +17,7 @@ class MultiFileInput(FileInput):
         file boxes initially presented.
         """
         super(MultiFileInput, self).__init__(attrs)
+        self.attrs = {'num_fields': 1}
         if attrs:
             self.attrs.update(attrs)
     
@@ -29,12 +31,14 @@ class MultiFileInput(FileInput):
         num_fields = final_attrs['num_fields']
         if num_fields<1: num_fields=1
         del final_attrs['num_fields']
+        
         js = self.js(name, value, num_fields, final_attrs)
         link = self.link(name, value, num_fields, final_attrs)
         fields = self.fields(name, value, num_fields, final_attrs)
+        
         return js+fields+link
     
-    def fields(self, namey, value, num_fields, attrs=None):
+    def fields(self, name, value, num_fields, attrs=None):
         """
         Renders the necessary number of file input boxes.
         """
@@ -44,7 +48,7 @@ class MultiFileInput(FileInput):
         """
         Renders a link to add more file input boxes.
         """
-        return u"<a onclick=\"javascript:new_%(name)s()\">+</a>" % {'name':name}
+        return u"<a onclick=\"javascript:new_%(name)s()\">+</a>" % {'name': name}
     
     def js(self, name, value, num_fields, attrs=None):
         """
@@ -62,7 +66,7 @@ class MultiFileInput(FileInput):
         }
         -->
         </script>
-        """ % {'id':attrs['id'], 'name':name, 'num_fields':num_fields}
+        """ % {'id': attrs['id'], 'name': name, 'num_fields': num_fields}
     
     def value_from_datadict(self, data, files, name):
         """
@@ -78,11 +82,18 @@ class MultiFileField(Field):
     """
     A field allowing users to upload multiple files at once.
     """
+    
     widget = MultiFileInput
     num_fields = 1
     
-    def __init__(self, num_fields=1, *args, **kwargs):
+    def __init__(self, num_fields=1, strict=False, *args, **kwargs):
+        """
+        num_fields - determines how many file input fields to show be default
+        strict - number of files uploaded must equal num_fields
+        """
+        
         self.num_fields = num_fields
+        self.strict = strict
         super(MultiFileField, self).__init__(*args, **kwargs)
     
     def widget_attrs(self, widget):
@@ -90,7 +101,7 @@ class MultiFileField(Field):
         Adds the num_fields to the MultiFileInput widget.
         """
         if isinstance(widget, MultiFileInput):
-            return {'num_fields':self.num_fields}
+            return {'num_fields': self.num_fields}
         return {}
     
     def clean(self, data):
@@ -102,7 +113,7 @@ class MultiFileField(Field):
         if not self.required and data in EMPTY_VALUES:
             return None
         
-        if len(data) != self.num_fields:
+        if self.strict and len(data) != self.num_fields:
             raise ValidationError(ugettext(u"An incorrect number of files were uploaded."))
         
         return data
