@@ -1,6 +1,5 @@
 V1
 ----
-- make sure the two count options (MultiFieldField/MultiFieldInput) match up
-- add max argument MultiFileField to specify the number of inputs that can be added to the page
+- add max argument MultiFileField to specify the number of inputs that can be added and submitted to the page
 - create all view of images
 - remove testing models/views/forms
